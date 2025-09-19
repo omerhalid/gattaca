@@ -14,6 +14,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 # Create executable
 add_executable(ant_mania 
     ant_mania.cpp
+    main.cpp
 )
 
 # Create benchmark tool

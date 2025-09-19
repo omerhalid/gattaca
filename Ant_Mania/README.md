@@ -4,41 +4,21 @@
 High-performance simulation of space ant invasion on planet Hiveum, optimized for **simulation latency** as the primary requirement.
 
 ## Key Features
-
-### 1. **Data Structure Design**
-- **Structure of Arrays (SoA)**: Cache-friendly memory layout for ant data
-- **Integer IDs**: Replace string lookups with fast integer operations  
-- **Pre-allocated vectors**: Eliminate dynamic allocation during simulation
-- **Batch processing**: Process ants in batches for better cache performance
-
-### 2. **Memory Layout Design**
-- **Cache-friendly data structures**: Contiguous memory allocation
-- **Efficient data types**: Use smallest appropriate integer types (uint8_t, uint16_t, uint32_t)
-- **Memory pre-allocation**: Reserve capacity to avoid reallocations
-
-### 3. **Algorithm Design**
-- **Early termination**: Stop simulation when all ants are dead or have moved enough
-- **Batch collision detection**: Efficient O(n) collision detection using counting sort
-- **Optimized ant movement**: Batch processing with early exits for dead ants
-
-### 4. **Compiler Configuration**
-- **-O3 optimization**: Maximum optimization level
-- **-march=native**: CPU-specific optimizations for ARM64
-- **-flto**: Link-time optimization
-- **-ffast-math**: Fast math operations
-- **-funroll-loops**: Loop unrolling for better performance
+- **High Performance**: Sub-100ms execution for complex scenarios
+- **Professional Architecture**: Clean separation of header/implementation files
+- **Optimized Algorithms**: Efficient collision detection and ant movement
+- **Memory Efficient**: Zero allocations in hot paths, cache-friendly data structures
 
 ## Performance Results
 
-### Small Map (28 colonies, 50 ants)
-- **Execution time**: ~4.26 milliseconds
-- **Iterations**: 10,001
-- **Result**: 2 ants remaining, 18 colonies destroyed, 44 fights
+### Small Map 
+- **50 ants**: ~14ms (many iterations due to colony destruction effect)
+- **100 ants**: ~8ms 
+- **200 ants**: ~7ms
 
-### Medium Map (6,763 colonies, 1000 ants)  
-- **Execution time**: ~87 milliseconds (0.087 seconds)
-- **Scalability**: Handles large maps efficiently with excellent performance
-- **Real-world performance**: Sub-100ms execution for complex scenarios
+### Medium Map 
+- **100-2000 ants**: ~75-80ms consistently
+- **Excellent scalability**: Performance driven by iterations, not just ant count
 
 ## Build & Run
 
@@ -61,49 +41,27 @@ cd build
 
 ## Benchmark Tool
 
-The project includes a simple benchmark tool (`benchmark.cpp`) that:
-
-- **Automated testing**: Runs multiple simulations with different parameters
-- **Performance metrics**: Measures execution time for each test
-- **Clean output**: Simple formatted results
+Simple automated benchmark tool (`benchmark.cpp`):
+- **Automated testing**: Multiple simulations with different parameters
+- **Performance metrics**: Execution time measurements
+- **Clean output**: Formatted results
 - **Flexible configuration**: Custom map files and ant counts
-- **Summary reports**: Average execution time across all tests
-
-### Benchmark Features:
-- **Default test configurations**: Small and medium maps with various ant counts
-- **Performance tracking**: Precise timing measurements
-- **Simple usage**: Easy command-line interface
-- **Clean output**: Minimal, focused results
 
 ## Architecture
 
-**Single class design** - Clean and focused:
-- `AntManiaSimulation`: Contains all logic in one focused class
-- **No virtual functions** - Direct method calls for maximum performance
-- **No inheritance** - Simple, straightforward design
-- **No multithreading** - Single-threaded for predictable latency
+**Professional modular design**:
+- `ant_mania.h`: Header file with class declarations and data structures
+- `ant_mania.cpp`: Implementation of the core simulation logic  
+- `main.cpp`: Entry point and command-line interface
+- `AntManiaSimulation`: Main simulation class with optimized algorithms
 
-## Assumptions Made
+## Documentation
 
-1. **Colony names are unique**: No duplicate colony names in the map
-2. **Valid map format**: All connections reference existing colonies  
-3. **Memory constraints**: Simulation designed for maps with up to 10,000 colonies
-4. **Ant behavior**: Ants move randomly and don't have memory of previous positions
-5. **Fight mechanics**: Exactly 2 ants are required to destroy a colony
-6. **Fight reporting**: Only the first 2 ant IDs are shown in collision messages (per specification requirement)
-7. **Fight logs**: Only the first two ants are shown in fight logs, as per spec
+For detailed optimization analysis and benchmark results, see:
+- **`optimization_doc.md`**: Complete optimization report with performance analysis
 
-## Time Complexity
-- **Time**: O(A × M) where A = number of ants, M = average moves per ant
-- **Space**: O(C + A) where C = number of colonies
+## Requirements
 
-## Why This Design?
-
-This implementation demonstrates:
-- ✅ **Practical optimization skills** without over-engineering
-- ✅ **Performance-focused thinking** with measurable results  
-- ✅ **Clean, readable code** that's easy to understand and maintain
-- ✅ **Real-world optimization techniques** used in production systems
-- ✅ **Focus on the actual requirement**: simulation latency optimization
-
-The design prioritizes **performance and clarity** - exactly what's needed for a high-performance simulation.
+- **C++17** or later
+- **CMake 3.16** or later
+- **Compiler**: GCC, Clang, or MSVC with optimization support
