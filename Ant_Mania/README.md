@@ -1,7 +1,7 @@
 # Ant Mania - High Performance C++ Implementation
 
 ## Overview
-High-performance simulation of space ant invasion on planet Hiveum, optimized for **simulation latency** as the primary requirement.
+High-performance simulation of space ant invasion on planet Hiveum, optimized for simulation latency as the primary requirement.
 
 ## Key Features
 - **High Performance**: Sub-100ms execution for complex scenarios
@@ -52,11 +52,10 @@ Simple automated benchmark tool (`benchmark.cpp`):
 
 ## Test Suite
 
-Professional test framework using Google Test in `test/` folder:
+Streamlined test framework using Google Test in `test/` folder:
 - **Google Test framework**: Industry-standard C++ testing
-- **Comprehensive coverage**: Direction parsing, map loading, ant creation, simulation execution
-- **Edge case testing**: Error handling, boundary conditions, invalid inputs
-- **Automated execution**: One command runs all tests with detailed reporting
+- **5 focused test cases**: Map loading, ant creation, simulation execution, error handling, performance
+- **Essential coverage**: Core functionality and edge cases without redundancy
 
 ## Architecture
 
