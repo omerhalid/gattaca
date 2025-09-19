@@ -75,4 +75,4 @@ For detailed optimization analysis and benchmark results, see:
 - **C++17** or later
 - **CMake 3.16** or later
 - **Compiler**: GCC, Clang, or MSVC with optimization support
-- **Google Test** (for running tests): `brew install googletest` on macOS
+- **Google Test** 
