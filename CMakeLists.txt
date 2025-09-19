@@ -11,15 +11,18 @@ set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -mtune=native -flto -ffa
 # Enable debug information for debug builds
 set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 
+# Include directories
+include_directories(include)
+
 # Create executable
 add_executable(ant_mania 
-    ant_mania.cpp
-    main.cpp
+    src/ant_mania.cpp
+    src/main.cpp
 )
 
 # Create benchmark tool
 add_executable(benchmark 
-    benchmark.cpp
+    src/benchmark.cpp
 )
 
 # Set default build type to Release for performance

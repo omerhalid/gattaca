@@ -11,14 +11,14 @@ find_package(GTest REQUIRED)
 # Create test executable
 add_executable(test_ant_mania 
     test_ant_mania.cpp
-    ../ant_mania.cpp
+    ../src/ant_mania.cpp
 )
 
 # Compiler flags for tests (less aggressive than main build)
 set(CMAKE_CXX_FLAGS "-Wall -Wextra -O2")
 
 # Include directories
-target_include_directories(test_ant_mania PRIVATE ..)
+target_include_directories(test_ant_mania PRIVATE ../include)
 
 # Link Google Test
 target_link_libraries(test_ant_mania GTest::GTest GTest::Main)

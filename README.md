@@ -28,12 +28,12 @@ High-performance simulation of space ant invasion on planet Hiveum, optimized fo
 
 # Run simulation
 cd build
-./ant_mania ../hiveum_map_small.txt 100
-./ant_mania ../hiveum_map_medium.txt 1000
+./ant_mania ../task/hiveum_map_small.txt 100
+./ant_mania ../task/hiveum_map_medium.txt 1000
 
 # Run automated benchmarks
 ./benchmark ./ant_mania
-./benchmark ./ant_mania ../hiveum_map_small.txt 50 100 200
+./benchmark ./ant_mania ../task/hiveum_map_small.txt 50 100 200
 
 # Interactive benchmark runner
 ../run_benchmark.sh

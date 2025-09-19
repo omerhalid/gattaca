@@ -31,8 +31,8 @@ int main(int argc, char* argv[]) {
     }
     
     std::cout << "=== Ant Mania Benchmark ===" << std::endl;
-    std::cout << std::left << std::setw(30) << "Test" << std::setw(15) << "Time (ms)" << std::endl;
-    std::cout << std::string(45, '-') << std::endl;
+    std::cout << std::left << std::setw(25) << "Map & Ants" << std::setw(15) << "Time (ms)" << std::endl;
+    std::cout << std::string(40, '-') << std::endl;
     
     double total_time = 0;
     
@@ -48,14 +48,25 @@ int main(int argc, char* argv[]) {
             double time_ms = duration.count() / 1000.0;
             total_time += time_ms;
             
-            std::cout << std::left << std::setw(30) << config 
+            // Parse config to show cleaner output
+            size_t space_pos = config.find(' ');
+            std::string map_part = config.substr(0, space_pos);
+            std::string ant_count = config.substr(space_pos + 1);
+            
+            // Extract just the map name (remove path)
+            size_t slash_pos = map_part.find_last_of('/');
+            std::string map_name = (slash_pos != std::string::npos) ? map_part.substr(slash_pos + 1) : map_part;
+            
+            std::string display_name = map_name + " (" + ant_count + " ants)";
+            
+            std::cout << std::left << std::setw(25) << display_name 
                       << std::setw(15) << std::fixed << std::setprecision(2) << time_ms << std::endl;
         } else {
             std::cout << "Error running: " << config << std::endl;
         }
     }
     
-    std::cout << std::string(45, '-') << std::endl;
+    std::cout << std::string(40, '-') << std::endl;
     std::cout << "Average time: " << std::fixed << std::setprecision(2) 
               << (total_time / test_configs.size()) << " ms" << std::endl;
     

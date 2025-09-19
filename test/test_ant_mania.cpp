@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <fstream>
 #include <sstream>
-#include "../ant_mania.h"
+#include "ant_mania.h"
 
 class AntManiaTest : public ::testing::Test {
 protected:

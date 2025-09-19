@@ -20,10 +20,10 @@ read -p "Pick (1-3): " choice
 
 case $choice in
     1)
-        ./benchmark ./ant_mania ../hiveum_map_small.txt 50 100 200
+        ./benchmark ./ant_mania ../task/hiveum_map_small.txt 50 100 200
         ;;
     2)
-        ./benchmark ./ant_mania ../hiveum_map_medium.txt 100 500 1000
+        ./benchmark ./ant_mania ../task/hiveum_map_medium.txt 100 500 1000
         ;;
     3)
         ./benchmark ./ant_mania
