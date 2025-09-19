@@ -37,6 +37,9 @@ cd build
 
 # Interactive benchmark runner
 ../run_benchmark.sh
+
+# Run tests
+./run_tests.sh
 ```
 
 ## Benchmark Tool
@@ -46,6 +49,14 @@ Simple automated benchmark tool (`benchmark.cpp`):
 - **Performance metrics**: Execution time measurements
 - **Clean output**: Formatted results
 - **Flexible configuration**: Custom map files and ant counts
+
+## Test Suite
+
+Professional test framework using Google Test in `test/` folder:
+- **Google Test framework**: Industry-standard C++ testing
+- **Comprehensive coverage**: Direction parsing, map loading, ant creation, simulation execution
+- **Edge case testing**: Error handling, boundary conditions, invalid inputs
+- **Automated execution**: One command runs all tests with detailed reporting
 
 ## Architecture
 
@@ -65,3 +76,4 @@ For detailed optimization analysis and benchmark results, see:
 - **C++17** or later
 - **CMake 3.16** or later
 - **Compiler**: GCC, Clang, or MSVC with optimization support
+- **Google Test** (for running tests): `brew install googletest` on macOS

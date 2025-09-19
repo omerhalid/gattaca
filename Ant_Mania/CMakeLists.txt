@@ -43,3 +43,6 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(ant_mania PRIVATE /W4 /O2 /Ob2 /Oi /Ot /Oy /GL)
     target_compile_options(benchmark PRIVATE /W4 /O2 /Ob2 /Oi /Ot /Oy /GL)
 endif()
+
+# Add test subdirectory
+add_subdirectory(test)
