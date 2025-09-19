@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Building Ant Mania simulation..."
-mkdir -p build_simple
-cd build_simple
+mkdir -p build
+cd build
 
 echo "Configuring with CMake..."
 cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -12,12 +12,15 @@ make -j$(sysctl -n hw.ncpu)
 
 echo "Build completed successfully!"
 echo ""
-echo "Available executable:"
+echo "Available executables:"
 echo "  ./ant_mania - High performance simulation"
+echo "  ./benchmark - Automated benchmark tool"
 echo ""
 echo "Usage examples:"
 echo "  ./ant_mania ../hiveum_map_small.txt 50"
 echo "  ./ant_mania ../hiveum_map_medium.txt 1000"
+echo "  ./benchmark ./ant_mania"
+echo "  ./benchmark ./ant_mania ../hiveum_map_small.txt 50 100 200"
 echo ""
 echo "Performance features:"
 echo "  • Structure of Arrays (SoA) for cache efficiency"

@@ -43,14 +43,37 @@ High-performance simulation of space ant invasion on planet Hiveum, optimized fo
 ## Build & Run
 
 ```bash
-# Build optimized version
-./build_simple.sh
+# Build project
+./build.sh
 
 # Run simulation
-cd build_simple
+cd build
 ./ant_mania ../hiveum_map_small.txt 100
 ./ant_mania ../hiveum_map_medium.txt 1000
+
+# Run automated benchmarks
+./benchmark ./ant_mania
+./benchmark ./ant_mania ../hiveum_map_small.txt 50 100 200
+
+# Interactive benchmark runner
+../run_benchmark.sh
 ```
+
+## Benchmark Tool
+
+The project includes a comprehensive benchmark tool (`benchmark.cpp`) that:
+
+- **Automated testing**: Runs multiple simulations with different parameters
+- **Performance metrics**: Measures execution time, iterations, fight pairs, and more
+- **Clean output**: Formatted tables with statistics
+- **Flexible configuration**: Custom map files and ant counts
+- **Summary reports**: Aggregated results across all tests
+
+### Benchmark Features:
+- **Multiple test configurations**: Small and medium maps with various ant counts
+- **Performance tracking**: Precise timing and resource usage
+- **Scalability analysis**: Tests performance across different scales
+- **Professional output**: Clean, tabular results perfect for reports
 
 ## Architecture
 

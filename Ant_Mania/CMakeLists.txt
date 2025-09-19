@@ -16,6 +16,11 @@ add_executable(ant_mania
     ant_mania.cpp
 )
 
+# Create benchmark tool
+add_executable(benchmark 
+    benchmark.cpp
+)
+
 # Set default build type to Release for performance
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -29,8 +34,11 @@ message(STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID}")
 # Compiler-specific optimizations
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     target_compile_options(ant_mania PRIVATE -Wall -Wextra)
+    target_compile_options(benchmark PRIVATE -Wall -Wextra)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
     target_compile_options(ant_mania PRIVATE -Wall -Wextra)
+    target_compile_options(benchmark PRIVATE -Wall -Wextra)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_compile_options(ant_mania PRIVATE /W4 /O2 /Ob2 /Oi /Ot /Oy /GL)
+    target_compile_options(benchmark PRIVATE /W4 /O2 /Ob2 /Oi /Ot /Oy /GL)
 endif()

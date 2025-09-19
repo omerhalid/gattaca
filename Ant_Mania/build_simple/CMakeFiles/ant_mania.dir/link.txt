@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-functions -fomit-frame-pointer -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/ant_mania.dir/ant_mania.cpp.o -o ant_mania
