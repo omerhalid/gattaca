@@ -48,11 +48,11 @@ The hot path (ant movement and collision detection) was the main target for opti
 
 | Ants | Time (ms) |
 |------|-----------|
-| 50   | 12.72     |
-| 100  | 8.40      |
-| 200  | 6.85      |  
+| 50   | 6.58      |
+| 100  | 5.07      |
+| 200  | 4.74      |  
 
-**Average:** 9.32 ms  
+**Average:** 5.46 ms  
 
 With more ants, collisions happen earlier → fewer iterations.  
 
@@ -62,14 +62,13 @@ With more ants, collisions happen earlier → fewer iterations.
 
 | Ants | Time (ms) |
 |------|-----------|
-| 100  | 89.15     |
+| 100  | 76.25     |
 | 500  | 75.20     |
-| 1000 | 79.83     |
-| 2000 | 87.26     |  
+| 1000 | 76.61     |
 
-**Average:** 82.86 ms  
+**Average:** 76.38 ms  
 
-Runtime stays stable around ~80 ms regardless of ant count.  
+Runtime is almost constant, dominated by colony graph size rather than ant count. 
 Scaling is good: performance is driven by iterations, not just ants.  
 
 ---
