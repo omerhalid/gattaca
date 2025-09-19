@@ -18,7 +18,7 @@ High-performance simulation of space ant invasion on planet Hiveum, optimized fo
 
 ### Medium Map 
 - **100-2000 ants**: ~75-80ms consistently
-- **Excellent scalability**: Performance driven by iterations, not just ant count
+- **Good scalability**: Performance driven by iterations, not just ant count
 
 ## Build & Run
 
