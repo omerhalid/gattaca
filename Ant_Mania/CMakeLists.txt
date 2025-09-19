@@ -5,19 +5,15 @@ project(AntManiaOptimized)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Optimized compiler flags
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-functions -fomit-frame-pointer -fno-exceptions -fno-rtti")
+# Optimized compiler flags for maximum performance
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG -march=native -mtune=native -flto -ffast-math -funroll-loops -finline-functions -fomit-frame-pointer")
 
 # Enable debug information for debug builds
-set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -fsanitize=address -fsanitize=undefined")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 
-# Create single executable with OOP structure
+# Create executable
 add_executable(ant_mania 
-    ant_mania_main.cpp
-    ant_mania_base.cpp
-    ant_mania_single.cpp
-    ant_mania_multi.cpp
-    ant_mania_benchmark.cpp
+    ant_mania.cpp
 )
 
 # Set default build type to Release for performance
