@@ -4,10 +4,10 @@
 High-performance simulation of space ant invasion on planet Hiveum, optimized for simulation latency as the primary requirement.
 
 ## Key Features
-- **High Performance**: Sub-100ms execution for complex scenarios
-- **Professional Architecture**: Clean separation of header/implementation files
-- **Optimized Algorithms**: Efficient collision detection and ant movement
-- **Memory Efficient**: Zero allocations in hot paths, cache-friendly data structures
+- **High Performance**
+- **Clean separation of header/implementation files**
+- **OEfficient collision detection and ant movement**
+- **Zero allocations in hot paths, cache-friendly data structures** 
 
 ## Performance Results
 
