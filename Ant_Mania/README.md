@@ -61,19 +61,19 @@ cd build
 
 ## Benchmark Tool
 
-The project includes a comprehensive benchmark tool (`benchmark.cpp`) that:
+The project includes a simple benchmark tool (`benchmark.cpp`) that:
 
 - **Automated testing**: Runs multiple simulations with different parameters
-- **Performance metrics**: Measures execution time, iterations, fight pairs, and more
-- **Clean output**: Formatted tables with statistics
+- **Performance metrics**: Measures execution time for each test
+- **Clean output**: Simple formatted results
 - **Flexible configuration**: Custom map files and ant counts
-- **Summary reports**: Aggregated results across all tests
+- **Summary reports**: Average execution time across all tests
 
 ### Benchmark Features:
-- **Multiple test configurations**: Small and medium maps with various ant counts
-- **Performance tracking**: Precise timing and resource usage
-- **Scalability analysis**: Tests performance across different scales
-- **Professional output**: Clean, tabular results perfect for reports
+- **Default test configurations**: Small and medium maps with various ant counts
+- **Performance tracking**: Precise timing measurements
+- **Simple usage**: Easy command-line interface
+- **Clean output**: Minimal, focused results
 
 ## Architecture
 
