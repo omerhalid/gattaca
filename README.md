@@ -12,9 +12,10 @@ High-performance simulation of space ant invasion on planet Hiveum, optimized fo
 ## Performance Results
 
 ### Small Map 
-- **50 ants**: ~14ms (many iterations due to colony destruction effect)
-- **100 ants**: ~8ms 
-- **200 ants**: ~7ms
+- **50 ants**: ~6-7ms (many iterations due to colony destruction effect)
+- **100 ants**: ~5-6ms 
+- **200 ants**: ~5ms
+With more ants, collisions occur earlier, reducing total iterations hence faster completion
 
 ### Medium Map 
 - **100-2000 ants**: ~75-80ms consistently
